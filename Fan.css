@@ -1,0 +1,136 @@
+*,
+*:before,
+*:after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+:root{
+    --colorOne: #78957ada;
+    --colortwo: #ffc06df9;
+    --colorthree: #484849;
+    --colorfour: #cf545eeb;
+    --colorfive: #3f3e3bd0;
+    --colorsix: #c7c793;
+    --colorseven: #56ff86ba;
+}
+
+body{
+    background: var(--colorOne);
+}
+
+.fan{
+    height: 350px;
+    width: 350px;
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+label{
+    display: block;
+    height: 20px;
+    width: 20px;
+    background-color: #000;
+    border-radius: 50%;
+    position: absolute;
+    margin: 120px auto 0 auto;
+    right: 0;
+    left: 0;
+    animation: ghurbe .5s linear infinite paused;
+}
+
+@keyframes ghurbe {
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+label::after{
+    content: '';
+    position: absolute;
+    height: 70px;
+    width: 70px;
+    background-color: var(--colortwo);
+    border: 10px solid var(--colorthree);
+    border-radius: 50%;
+    left: -25px;
+    bottom: -25px;
+}
+
+span{
+    display: block;
+    height: 120px;
+    width: 70px;
+    background: var(--colorfour);
+    border-radius: 55% 45% 100% 0% / 30% 40% 50% 60%;
+    position: absolute;
+    z-index: -1;
+    box-shadow: inset 2px 5px 5px #00000019;
+}
+
+span:nth-child(1){
+    bottom: 10px;
+    left: 10px;
+}
+
+span:nth-child(2){
+    transform: rotate(-120deg);
+    left: -95px;
+    top: -50px;
+}
+
+span:nth-child(3){
+        transform: rotate(-240deg);
+        right: -60px;
+        top: 10px;
+}
+
+.khuti{
+    height: 160px;
+    width: 20px;
+    background: var(--colorfive);
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    top: 140px;
+    z-index: -10;
+}
+
+.khuti::after{
+    content: "ON/OFF";
+    position: absolute;
+    height: 35px;
+    width: 150px;
+    background: var(--colorsix);
+    left: -65px;
+    top: 160px;
+    border-radius: 20px 20px 0 0;
+    font-size: .7rem;
+    font-weight: 600;
+    padding-left: 20px;
+}
+
+input{
+    appearance: none;
+    position: absolute;
+    height: 12px;
+    width: 20px;
+    background-color: var(--colorseven);
+    bottom: 50px;
+    left: 130px;
+    border-radius: 5px 5px 0 0;
+    cursor: pointer;
+}
+
+input:checked{
+    height: 8px;
+}
+
+input:checked + label{
+    animation-play-state: running;
+}
